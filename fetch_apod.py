@@ -1,10 +1,12 @@
 import argparse
 import requests
-
+import os
+from dotenv import load_dotenv
 from save_tools import save_picture, get_extension
 
 
 def main():
+    load_dotenv()
     nasa_token = os.getenv('nasa_token')
     parser = argparse.ArgumentParser(description='Скачивает фотографии с сервиса NASA Astronomy Picture of the Day (APOD)')
 

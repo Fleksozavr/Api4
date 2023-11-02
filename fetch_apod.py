@@ -7,10 +7,8 @@ from save_tools import save_picture, get_extension
 
 def main():
     load_dotenv()
-    nasa_token = os.getenv('nasa_token')
+    nasa_token = os.getenv('NASA_TOKEN')
     parser = argparse.ArgumentParser(description='Скачивает фотографии с сервиса NASA Astronomy Picture of the Day (APOD)')
-
-    # parser.add_argument('--api_key', type=str, required=True,default=', help='API-ключ для доступа к сервису NASA')
     parser.add_argument('--count', type=int, default=30, help='Количество фотографий для скачивания')
     parser.add_argument('--folder', type=str, required=True, help='Путь к папке для сохранения фотографий')
 

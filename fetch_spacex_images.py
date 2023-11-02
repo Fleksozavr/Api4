@@ -24,14 +24,14 @@ def main():
     response = requests.get(url)
     response.raise_for_status()
     links = response.json()['links']
-    if 'flickr' in links:
+    if 'flickr' not in links:
+        print('Для данного запуска нет фотографий')
+    else:
         links = links['flickr']['original']
         filename = 'spaceX'
         for index, picture in enumerate(links, 1):
             full_name = f'{filename}{index}.jpg'
             save_picture(folder, picture, full_name)
-    else:
-        print('Для данного запуска нет фотографий')
 
 
 if __name__ == '__main__':

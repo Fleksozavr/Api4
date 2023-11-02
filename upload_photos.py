@@ -7,8 +7,8 @@ import telegram
 
 def main():
     load_dotenv()
-    TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
-    TELEGRAM_CHANNEL_ID = os.getenv('TELEGRAM_CHANNEL_ID')
+    telegram_token = os.getenv('TELEGRAM_TOKEN')
+    telegram_channel_id = os.getenv('TELEGRAM_CHANNEL_ID')
     bot = telegram.Bot(token=TELEGRAM_TOKEN)
 
     parser = argparse.ArgumentParser(description='Отправка случайных фотографий в чат Telegram')

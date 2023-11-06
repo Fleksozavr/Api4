@@ -20,17 +20,10 @@ def main():
                         type=str,
                         default='folder',
                         help='Путь к папке, содержащей фотографии для отправки')
-    parser.add_argument('--telegram_token',
-                        type=str,
-                        help='Токен бота Telegram')
-    parser.add_argument('--telegram_channel_id',
-                        type=str,
-                        help='ID канала Telegram')
+    
     args = parser.parse_args()
     folder = args.folder
     periodicity = args.time
-    telegram_token = args.telegram_token or telegram_token
-    telegram_channel_id = args.telegram_channel_id or telegram_channel_id
 
     while True:
         all_files = []
